@@ -5,16 +5,18 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "travels")
-@Getter @Setter
-public class Travel {
+@Table(name = "payments")
+@Getter
+@Setter
+public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String date;
-    private String time;
+    private String type;
+    private double cost;
 
-    @OneToOne(mappedBy = "travel")
-    private DestinationReport destinationReport;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }

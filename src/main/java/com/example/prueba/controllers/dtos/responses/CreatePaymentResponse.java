@@ -4,11 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class CreateVehicleResponse {
+public class CreatePaymentResponse {
     private Long id;
-    private int capacity;
-    private String plat;
-    private String availability;
     private String type;
-    private String destination;
+    private double cost;
+    private Long userId;
 }

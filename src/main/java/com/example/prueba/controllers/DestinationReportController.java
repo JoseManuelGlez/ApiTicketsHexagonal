@@ -1,8 +1,8 @@
 package com.example.prueba.controllers;
 
-import com.example.prueba.controllers.dtos.requests.CreateUserRequest;
+import com.example.prueba.controllers.dtos.requests.CreateDestinationReportRequest;
 import com.example.prueba.controllers.dtos.responses.BaseResponse;
-import com.example.prueba.services.interfaces.IUserService;
+import com.example.prueba.services.interfaces.IDestinationReportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("user")
-public class UserController {
+@RequestMapping("destination-report")
+public class DestinationReportController {
     @Autowired
-    private IUserService service;
+    private IDestinationReportService service;
 
     @PostMapping
-    public ResponseEntity<BaseResponse> create(@RequestBody CreateUserRequest request){
+    public ResponseEntity<BaseResponse> create(@RequestBody CreateDestinationReportRequest request){
         BaseResponse baseResponse = service.create(request);
 
         return new ResponseEntity<>(baseResponse, baseResponse.getHttpStatus());

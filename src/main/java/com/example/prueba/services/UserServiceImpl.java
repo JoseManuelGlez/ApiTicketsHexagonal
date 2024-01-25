@@ -26,6 +26,11 @@ public class UserServiceImpl implements IUserService {
                 .httpStatus(HttpStatus.CREATED).build();
     }
 
+    @Override
+    public User findIdById(Long userId) {
+        return repository.findIdById(userId);
+    }
+
     private User from(CreateUserRequest request){
         User user = new User();
 
@@ -41,8 +46,8 @@ public class UserServiceImpl implements IUserService {
 
         response.setId(user.getId());
         response.setName(user.getName());
-        response.setCurp(user.getAge());
-        response.setName(user.getCurp());
+        response.setAge(user.getAge());
+        response.setCurp(user.getCurp());
 
         return response;
     }

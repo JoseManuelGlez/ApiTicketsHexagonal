@@ -4,8 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class CreateUserRequest {
-    private String name;
-    private String age;
-    private String curp;
+public class CreatePaymentRequest {
+    private String type;
+    private double cost;
+    private Long userId;
 }

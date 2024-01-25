@@ -21,9 +21,14 @@ public class TravelServiceImpl implements ITravelService {
 
         return BaseResponse.builder()
                 .data(from(repository.save(travel)))
-                .message("User created corretly")
+                .message("Travel created corretly")
                 .success(Boolean.TRUE)
                 .httpStatus(HttpStatus.CREATED).build();
+    }
+
+    @Override
+    public Travel findIdById(Long travelId) {
+        return repository.findIdById(travelId);
     }
 
     private Travel from(CreateTravelRequest request){
@@ -40,7 +45,7 @@ public class TravelServiceImpl implements ITravelService {
 
         response.setId(travel.getId());
         response.setDate(travel.getDate());
-        response.setTime(response.getTime());
+        response.setTime(travel.getTime());
 
         return response;
     }

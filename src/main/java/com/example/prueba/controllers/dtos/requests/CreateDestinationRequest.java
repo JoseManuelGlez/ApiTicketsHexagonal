@@ -4,10 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class CreateVehicleRequest {
-    private int capacity;
-    private String plat;
-    private String availability;
-    private String type;
+public class CreateDestinationRequest {
     private String destination;
 }

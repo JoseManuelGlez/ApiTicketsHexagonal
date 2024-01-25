@@ -4,11 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class CreateVehicleResponse {
+public class CreateDestinationReportResponse {
     private Long id;
-    private int capacity;
     private String plat;
-    private String availability;
-    private String type;
-    private String destination;
+    private int capacity;
+    private Long travelId;
+    private Long userId;
 }
