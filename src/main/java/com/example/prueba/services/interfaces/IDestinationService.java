@@ -10,4 +10,6 @@ public interface IDestinationService {
     BaseResponse list();
 
     Destination findDestinationByDestination(String destination);
+
+
 }
