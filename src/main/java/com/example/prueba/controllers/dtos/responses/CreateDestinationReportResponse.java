@@ -7,7 +7,7 @@ import lombok.Setter;
 public class CreateDestinationReportResponse {
     private Long id;
     private String plat;
-    private int capacity;
-    private Long travelId;
-    private Long userId;
+    private CapacityVehicleResponse capacity;
+    private IdTravelResponse travelId;
+    private IdUserResponse userId;
 }

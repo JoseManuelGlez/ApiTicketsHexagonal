@@ -2,7 +2,9 @@ package com.example.prueba.services;
 
 import com.example.prueba.controllers.dtos.requests.CreateVehicleRequest;
 import com.example.prueba.controllers.dtos.responses.BaseResponse;
+import com.example.prueba.controllers.dtos.responses.CreateDestinationResponse;
 import com.example.prueba.controllers.dtos.responses.CreateVehicleResponse;
+import com.example.prueba.controllers.dtos.responses.DestinationResponse;
 import com.example.prueba.entities.Destination;
 import com.example.prueba.entities.Vehicle;
 import com.example.prueba.repositories.IVehicleRepository;
@@ -63,10 +65,16 @@ public class VehicleServiceImpl implements IVehicleService {
         response.setPlat(vehicle.getPlat());
         response.setAvailability(vehicle.getAvailability());
         response.setType(vehicle.getType());
-        //response.setDestination(vehicle.getDestination());
+        response.setDestination(from(vehicle.getDestination()));
 
         return response;
     }
 
+    private DestinationResponse from(Destination destination){
+        DestinationResponse response = new DestinationResponse();
 
+        response.setDestination(destination.getDestination());
+
+        return response;
+    }
 }

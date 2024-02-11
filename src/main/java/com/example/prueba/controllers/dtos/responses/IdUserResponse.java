@@ -4,6 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class DestinationResponse {
-    String destination;
+public class IdUserResponse {
+    private Long IdUser;
 }

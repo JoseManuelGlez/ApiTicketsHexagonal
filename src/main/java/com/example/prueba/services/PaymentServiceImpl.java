@@ -3,6 +3,7 @@ package com.example.prueba.services;
 import com.example.prueba.controllers.dtos.requests.CreatePaymentRequest;
 import com.example.prueba.controllers.dtos.responses.BaseResponse;
 import com.example.prueba.controllers.dtos.responses.CreatePaymentResponse;
+import com.example.prueba.controllers.dtos.responses.IdUserResponse;
 import com.example.prueba.entities.*;
 import com.example.prueba.repositories.IPaymentRepository;
 import com.example.prueba.services.interfaces.IPaymentService;
@@ -49,6 +50,16 @@ public class PaymentServiceImpl implements IPaymentService {
         response.setId(payment.getId());
         response.setType(payment.getType());
         response.setCost(payment.getCost());
+
+        response.setUserId(from(payment.getUser()));
+
+        return response;
+    }
+
+    private IdUserResponse from(User user){
+        IdUserResponse response = new IdUserResponse();
+
+        response.setIdUser(user.getId());
 
         return response;
     }

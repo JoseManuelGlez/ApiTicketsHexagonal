@@ -12,7 +12,7 @@ public class CreateReservationResponse {
     private String status;
     private float total;
 
-    private String destination;
-    private Long userId;
-    private String plat;
+    private DestinationResponse destination;
+    private IdUserResponse userId;
+    private PlatVehicleResponse plat;
 }

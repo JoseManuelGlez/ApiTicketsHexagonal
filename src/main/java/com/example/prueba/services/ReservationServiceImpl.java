@@ -1,8 +1,7 @@
 package com.example.prueba.services;
 
 import com.example.prueba.controllers.dtos.requests.CreateReservationRequest;
-import com.example.prueba.controllers.dtos.responses.BaseResponse;
-import com.example.prueba.controllers.dtos.responses.CreateReservationResponse;
+import com.example.prueba.controllers.dtos.responses.*;
 import com.example.prueba.entities.Destination;
 import com.example.prueba.entities.Reservation;
 import com.example.prueba.entities.User;
@@ -70,6 +69,35 @@ public class ReservationServiceImpl implements IReservationService {
         response.setSeat(reservation.getSeat());
         response.setStatus(reservation.getStatus());
         response.setTotal(reservation.getTotal());
+
+        response.setDestination(from(reservation.getDestination()));
+        response.setUserId(from(reservation.getUser()));
+        response.setPlat(from(reservation.getVehicle()));
+
+
+        return response;
+    }
+
+    private DestinationResponse from(Destination destination){
+        DestinationResponse response = new DestinationResponse();
+
+        response.setDestination(destination.getDestination());
+
+        return response;
+    }
+
+    private PlatVehicleResponse from(Vehicle vehicle){
+        PlatVehicleResponse response = new PlatVehicleResponse();
+
+        response.setPlat(vehicle.getPlat());
+
+        return response;
+    }
+
+    private IdUserResponse from(User user){
+        IdUserResponse response = new IdUserResponse();
+
+        response.setIdUser(user.getId());
 
         return response;
     }

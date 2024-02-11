@@ -10,5 +10,5 @@ public class CreateVehicleResponse {
     private String plat;
     private String availability;
     private String type;
-    private String destination;
+    private DestinationResponse destination;
 }

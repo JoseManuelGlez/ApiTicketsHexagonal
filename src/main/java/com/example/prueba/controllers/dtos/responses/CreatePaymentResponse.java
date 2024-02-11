@@ -8,5 +8,5 @@ public class CreatePaymentResponse {
     private Long id;
     private String type;
     private double cost;
-    private Long userId;
+    private IdUserResponse userId;
 }
