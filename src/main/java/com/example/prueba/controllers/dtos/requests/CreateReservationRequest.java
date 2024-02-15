@@ -3,6 +3,8 @@ package com.example.prueba.controllers.dtos.requests;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter @Setter
 public class CreateReservationRequest {
     private String date;
@@ -12,6 +14,6 @@ public class CreateReservationRequest {
     private float total;
 
     private String destination;
-    private Long userId;
+    private UUID userId;
     private String plat;
 }

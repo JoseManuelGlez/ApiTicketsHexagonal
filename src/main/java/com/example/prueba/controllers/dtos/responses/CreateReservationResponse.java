@@ -3,9 +3,11 @@ package com.example.prueba.controllers.dtos.responses;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.UUID;
+
 @Getter @Setter
 public class CreateReservationResponse {
-    private Long id;
+    private UUID id;
     private String date;
     private String time;
     private int seat;

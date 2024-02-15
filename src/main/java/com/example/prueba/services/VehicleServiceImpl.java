@@ -2,7 +2,6 @@ package com.example.prueba.services;
 
 import com.example.prueba.controllers.dtos.requests.CreateVehicleRequest;
 import com.example.prueba.controllers.dtos.responses.BaseResponse;
-import com.example.prueba.controllers.dtos.responses.CreateDestinationResponse;
 import com.example.prueba.controllers.dtos.responses.CreateVehicleResponse;
 import com.example.prueba.controllers.dtos.responses.DestinationResponse;
 import com.example.prueba.entities.Destination;
