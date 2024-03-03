@@ -1,7 +1,7 @@
-package com.example.prueba.application.controllers.advices;
+package com.example.prueba.application.advices;
 
-import com.example.prueba.application.controllers.exceptions.PruebaException;
-import com.example.prueba.application.controllers.dtos.responses.BaseResponse;
+import com.example.prueba.application.exceptions.PruebaException;
+import com.example.prueba.application.dtos.responses.BaseResponse;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

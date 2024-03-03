@@ -1,8 +1,8 @@
-package com.example.prueba.controllers;
+package com.example.prueba.application.controllers;
 
-import com.example.prueba.controllers.dtos.requests.CreatePaymentRequest;
+import com.example.prueba.application.dtos.requests.CreatePaymentRequest;
 import com.example.prueba.domain.ports.in.IPaymentService;
-import com.example.prueba.util.URLUtils;
+import com.example.prueba.infraestructure.util.URLUtils;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

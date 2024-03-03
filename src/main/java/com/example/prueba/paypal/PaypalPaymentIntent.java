@@ -1,4 +1,5 @@
 package com.example.prueba.paypal;
 
-public class PaypalPaymentIntent {
+public enum PaypalPaymentIntent {
+    sale, authorize, order
 }

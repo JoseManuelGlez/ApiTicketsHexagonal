@@ -1,4 +1,4 @@
-package com.example.prueba.paypal;
+package com.example.prueba.infraestructure.configs.Mail;
 
 import java.util.HashMap;
 import java.util.Map;

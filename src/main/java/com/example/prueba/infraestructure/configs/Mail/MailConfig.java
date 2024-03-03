@@ -1,4 +1,4 @@
-package com.example.prueba.configurations.Mail;
+package com.example.prueba.infraestructure.configs.Mail;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Bean;

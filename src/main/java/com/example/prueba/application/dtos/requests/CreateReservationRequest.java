@@ -1,4 +1,4 @@
-package com.example.prueba.application.controllers.dtos.requests;
+package com.example.prueba.application.dtos.requests;
 
 import com.example.prueba.domain.entities.User;
 import com.example.prueba.domain.entities.enums.LuggageType;

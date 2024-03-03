@@ -1,7 +1,7 @@
-package com.example.prueba.services.interfaces;
+package com.example.prueba.domain.ports.in;
 
-import com.example.prueba.controllers.dtos.requests.CreateTravelRequest;
-import com.example.prueba.controllers.dtos.responses.BaseResponse;
+import com.example.prueba.application.dtos.requests.CreateTravelRequest;
+import com.example.prueba.application.dtos.responses.BaseResponse;
 import com.example.prueba.domain.entities.Travel;
 
 import java.util.UUID;

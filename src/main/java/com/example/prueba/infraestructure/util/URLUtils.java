@@ -1,4 +1,4 @@
-package com.example.prueba.util;
+package com.example.prueba.infraestructure.util;
 
 import jakarta.servlet.http.HttpServletRequest;
 

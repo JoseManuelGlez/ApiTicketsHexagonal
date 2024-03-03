@@ -1,7 +1,6 @@
-package com.example.prueba.services.interfaces;
+package com.example.prueba.domain.ports.in;
 
-import com.example.prueba.controllers.dtos.requests.CreatePaymentRequest;
-import com.example.prueba.controllers.dtos.responses.BaseResponse;
+import com.example.prueba.application.dtos.requests.CreatePaymentRequest;
 import com.paypal.api.payments.Payment;
 import com.paypal.base.rest.PayPalRESTException;
 

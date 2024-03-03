@@ -1,4 +1,4 @@
-package com.example.prueba.services;
+package com.example.prueba.infraestructure.services;
 
 import com.example.prueba.application.dtos.requests.CreateUserRequest;
 import com.example.prueba.application.dtos.requests.UserLoginRequest;

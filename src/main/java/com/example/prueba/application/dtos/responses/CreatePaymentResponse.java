@@ -1,4 +1,4 @@
-package com.example.prueba.application.controllers.dtos.responses;
+package com.example.prueba.application.dtos.responses;
 
 import lombok.Getter;
 import lombok.Setter;

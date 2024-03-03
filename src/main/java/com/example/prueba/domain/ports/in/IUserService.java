@@ -1,8 +1,8 @@
-package com.example.prueba.services.interfaces;
+package com.example.prueba.domain.ports.in;
 
-import com.example.prueba.controllers.dtos.requests.CreateUserRequest;
-import com.example.prueba.controllers.dtos.requests.UserLoginRequest;
-import com.example.prueba.controllers.dtos.responses.BaseResponse;
+import com.example.prueba.application.dtos.requests.CreateUserRequest;
+import com.example.prueba.application.dtos.requests.UserLoginRequest;
+import com.example.prueba.application.dtos.responses.BaseResponse;
 import com.example.prueba.domain.entities.User;
 
 import java.util.List;

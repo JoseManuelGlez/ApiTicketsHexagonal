@@ -1,4 +1,4 @@
-package com.example.prueba.entities;
+package com.example.prueba.domain.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

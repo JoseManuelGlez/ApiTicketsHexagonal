@@ -1,4 +1,4 @@
-package com.example.prueba.application.controllers.exceptions;
+package com.example.prueba.application.exceptions;
 
 public class PruebaException extends RuntimeException{
 

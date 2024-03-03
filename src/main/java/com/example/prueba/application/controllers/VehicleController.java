@@ -1,7 +1,7 @@
-package com.example.prueba.controllers;
+package com.example.prueba.application.controllers;
 
-import com.example.prueba.controllers.dtos.requests.CreateVehicleRequest;
-import com.example.prueba.controllers.dtos.responses.BaseResponse;
+import com.example.prueba.application.dtos.requests.CreateVehicleRequest;
+import com.example.prueba.application.dtos.responses.BaseResponse;
 import com.example.prueba.domain.ports.in.IVehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

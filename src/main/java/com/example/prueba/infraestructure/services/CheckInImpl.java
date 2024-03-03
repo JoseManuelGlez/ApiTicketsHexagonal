@@ -1,4 +1,4 @@
-package com.example.prueba.services;
+package com.example.prueba.infraestructure.services;
 
 import com.example.prueba.application.dtos.requests.UpdateCheckInRequest;
 import com.example.prueba.domain.entities.CheckInCode;

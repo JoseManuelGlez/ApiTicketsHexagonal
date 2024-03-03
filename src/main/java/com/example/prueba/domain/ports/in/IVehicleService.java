@@ -1,7 +1,7 @@
-package com.example.prueba.services.interfaces;
+package com.example.prueba.domain.ports.in;
 
-import com.example.prueba.controllers.dtos.requests.CreateVehicleRequest;
-import com.example.prueba.controllers.dtos.responses.BaseResponse;
+import com.example.prueba.application.dtos.requests.CreateVehicleRequest;
+import com.example.prueba.application.dtos.responses.BaseResponse;
 import com.example.prueba.domain.entities.Vehicle;
 
 public interface IVehicleService {

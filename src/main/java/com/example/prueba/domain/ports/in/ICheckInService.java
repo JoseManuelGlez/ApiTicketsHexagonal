@@ -1,6 +1,6 @@
-package com.example.prueba.services.interfaces;
+package com.example.prueba.domain.ports.in;
 
-import com.example.prueba.controllers.dtos.requests.UpdateCheckInRequest;
+import com.example.prueba.application.dtos.requests.UpdateCheckInRequest;
 import com.example.prueba.domain.entities.CheckInCode;
 
 public interface ICheckInService {

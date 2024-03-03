@@ -1,6 +1,6 @@
-package com.example.prueba.entities;
+package com.example.prueba.domain.entities;
 
-import com.example.prueba.entities.enums.LuggageType;
+import com.example.prueba.domain.entities.enums.LuggageType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

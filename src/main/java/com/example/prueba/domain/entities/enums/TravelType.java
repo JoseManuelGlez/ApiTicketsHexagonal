@@ -1,4 +1,4 @@
-package com.example.prueba.entities.enums;
+package com.example.prueba.domain.entities.enums;
 
 public enum TravelType {
     BASIC,

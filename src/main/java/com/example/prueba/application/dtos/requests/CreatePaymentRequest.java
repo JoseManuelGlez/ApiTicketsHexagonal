@@ -1,4 +1,4 @@
-package com.example.prueba.application.controllers.dtos.requests;
+package com.example.prueba.application.dtos.requests;
 
 import com.example.prueba.paypal.PaypalPaymentIntent;
 import com.example.prueba.paypal.PaypalPaymentMethod;

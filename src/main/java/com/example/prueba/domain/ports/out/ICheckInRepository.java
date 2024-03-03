@@ -1,4 +1,4 @@
-package com.example.prueba.repositories;
+package com.example.prueba.domain.ports.out;
 
 import com.example.prueba.domain.entities.CheckInCode;
 import org.springframework.data.jpa.repository.JpaRepository;
