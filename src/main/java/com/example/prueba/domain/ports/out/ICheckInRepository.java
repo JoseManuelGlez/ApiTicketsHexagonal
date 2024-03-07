@@ -4,9 +4,7 @@ import com.example.prueba.domain.entities.CheckInCode;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
-
 @Repository
-public interface ICheckInRepository extends JpaRepository<CheckInCode, UUID> {
+public interface ICheckInRepository extends JpaRepository<CheckInCode, String> {
     CheckInCode findCodeByCode(String code);
 }

@@ -64,15 +64,6 @@ public class VehicleServiceImpl implements IVehicleService {
         response.setPlat(vehicle.getPlat());
         response.setAvailability(vehicle.getAvailability());
         response.setType(vehicle.getType());
-        response.setDestination(from(vehicle.getDestination()));
-
-        return response;
-    }
-
-    private DestinationResponse from(Destination destination){
-        DestinationResponse response = new DestinationResponse();
-
-        response.setDestination(destination.getDestination());
 
         return response;
     }

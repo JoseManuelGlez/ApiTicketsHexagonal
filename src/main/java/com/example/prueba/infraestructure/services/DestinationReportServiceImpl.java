@@ -41,7 +41,7 @@ public class DestinationReportServiceImpl implements IDestinationReportService {
     }
 
     @Override
-    public DestinationReport findDestinationReportByUserId(User user) {
+    public DestinationReport findDestinationReportByUserId(String user) {
         return repository.findDestinationReportByUserId(user);
     }
 

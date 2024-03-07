@@ -6,16 +6,15 @@ import com.example.prueba.application.dtos.responses.BaseResponse;
 import com.example.prueba.domain.entities.User;
 
 import java.util.List;
-import java.util.UUID;
 
 public interface IUserService {
     BaseResponse create(CreateUserRequest request);
 
-    User findIdById(UUID userId);
+    User findIdById(String userId);
 
     BaseResponse login(UserLoginRequest request);
 
-    List<User> findUsers(List<User> users);
+    List<User> findUsersByEmails(List<String> userIds);
 
-    User findIdByEmail(String email);
+    String findIdByEmail(String email);
 }

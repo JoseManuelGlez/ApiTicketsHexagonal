@@ -8,5 +8,5 @@ import com.example.prueba.domain.entities.User;
 public interface IDestinationReportService {
     BaseResponse create(CreateDestinationReportRequest request);
 
-    DestinationReport findDestinationReportByUserId(User user);
+    DestinationReport findDestinationReportByUserId(String user);
 }

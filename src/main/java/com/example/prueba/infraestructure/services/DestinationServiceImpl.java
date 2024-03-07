@@ -33,7 +33,10 @@ public class DestinationServiceImpl implements IDestinationService {
 
     @Override
     public BaseResponse list() {
-        List<CreateDestinationResponse> destinations = repository.findAll().stream().map(this::from).collect(Collectors.toList());
+        List<CreateDestinationResponse> destinations = repository.findAll()
+                .stream()
+                .map(this::from)
+                .collect(Collectors.toList());
 
         return BaseResponse.builder()
                 .data(destinations)
@@ -44,19 +47,19 @@ public class DestinationServiceImpl implements IDestinationService {
 
     @Override
     public Destination findDestinationByDestination(String destination) {
-        return repository.findDestinationByDestination(destination);
+        return repository.findDestinationByCity(destination);
     }
 
     @Override
     public BaseResponse findDestinationsByStateAndCity(GetDestinationRequest request) {
         List<Destination> destinations = repository.findDestinationsByStateAndCity(request.getState(), request.getCity());
 
-        List<Destination> availableDestinations = destinations.stream()
-                .filter(destination -> destination.getDestinationStatus() == DestinationStatus.AVAILABLE)
+        List<CreateDestinationResponse> destinationDTOs = destinations.stream()
+                .map(this::convertToDTO)
                 .collect(Collectors.toList());
 
         return BaseResponse.builder()
-                .data(availableDestinations)
+                .data(destinationDTOs)
                 .message("Destinations found")
                 .success(Boolean.TRUE)
                 .httpStatus(HttpStatus.OK).build();
@@ -65,7 +68,6 @@ public class DestinationServiceImpl implements IDestinationService {
     private Destination from(CreateDestinationRequest request){
         Destination destination = new Destination();
 
-        destination.setDestination(request.getDestination());
         destination.setCity(request.getCity());
         destination.setState(request.getState());
         destination.setDestinationStatus(request.getDestinationStatus());
@@ -77,12 +79,20 @@ public class DestinationServiceImpl implements IDestinationService {
         CreateDestinationResponse response = new CreateDestinationResponse();
 
         response.setId(destination.getId());
-        response.setDestination(destination.getDestination());
         response.setCity(destination.getCity());
-        response.setState(response.getState());
-        response.setDestinationStatus(response.getDestinationStatus());
+        response.setState(destination.getState());
+        response.setDestinationStatus(destination.getDestinationStatus());
 
         return response;
+    }
 
+    private CreateDestinationResponse convertToDTO(Destination destination) {
+        CreateDestinationResponse dto = new CreateDestinationResponse();
+        dto.setId(destination.getId());
+        dto.setState(destination.getState());
+        dto.setCity(destination.getCity());
+        dto.setDestinationStatus(destination.getDestinationStatus());
+
+        return dto;
     }
 }

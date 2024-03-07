@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface IDestinationRepository extends JpaRepository<Destination, Long> {
-    Destination findDestinationByDestination(String destination);
+public interface IDestinationRepository extends JpaRepository<Destination, String> {
+    Destination findDestinationByCity(String destination);
 
     List<Destination> findDestinationsByStateAndCity(String state, String city);
 }

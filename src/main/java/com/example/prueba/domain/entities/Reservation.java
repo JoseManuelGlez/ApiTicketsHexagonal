@@ -1,12 +1,12 @@
 package com.example.prueba.domain.entities;
 
 import com.example.prueba.domain.entities.enums.LuggageType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "reservations")
@@ -15,7 +15,7 @@ import java.util.UUID;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private String id;
 
     private String departureDate;
     private String returnDate;
@@ -27,7 +27,7 @@ public class Reservation {
     private LuggageType luggageType;
 
     @OneToOne
-    @JoinColumn(name = "destination", referencedColumnName = "destination")
+    @JoinColumn(name = "city", referencedColumnName = "city")
     private Destination destination;
 
     @OneToMany

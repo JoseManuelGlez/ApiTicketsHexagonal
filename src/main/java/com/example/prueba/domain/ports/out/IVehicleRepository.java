@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IVehicleRepository extends JpaRepository<Vehicle, Long> {
+public interface IVehicleRepository extends JpaRepository<Vehicle, String> {
     Vehicle findCapacityByCapacity(int capacity);
 
     Vehicle findPlatByPlat(String plat);

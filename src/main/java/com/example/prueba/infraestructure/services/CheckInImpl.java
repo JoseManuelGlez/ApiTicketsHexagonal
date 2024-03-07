@@ -8,6 +8,8 @@ import com.example.prueba.domain.ports.in.ICheckInService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class CheckInImpl implements ICheckInService {
     @Autowired
@@ -35,7 +37,9 @@ public class CheckInImpl implements ICheckInService {
     private CheckInCode from(String status){
         CheckInCode checkInCode = new CheckInCode();
 
+
         checkInCode.setStatus(CheckInStatus.valueOf(status));
+        checkInCode.setCode(UUID.randomUUID().toString());
 
         return checkInCode;
     }

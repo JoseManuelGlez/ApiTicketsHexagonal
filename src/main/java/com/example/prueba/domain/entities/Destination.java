@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "destinations")
@@ -15,10 +14,12 @@ import java.util.UUID;
 public class Destination {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private String id;
 
-    private String destination;
+    @Column(unique = true)
     private String state;
+
+    @Column(unique = true)
     private String city;
 
     @Enumerated(EnumType.STRING)

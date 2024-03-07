@@ -12,7 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements IUserService {
@@ -31,7 +30,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public User findIdById(UUID userId) {
+    public User findIdById(String userId) {
         return repository.findIdById(userId);
     }
 
@@ -47,12 +46,12 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<User> findUsers(List<User> users) {
-        return repository.findUsersByUserList(users);
+    public List<User> findUsersByEmails(List<String> emails) {
+        return repository.findByEmailIn(emails);
     }
 
     @Override
-    public User findIdByEmail(String email) {
+    public String findIdByEmail(String email) {
         return repository.findIdByEmail(email);
     }
 

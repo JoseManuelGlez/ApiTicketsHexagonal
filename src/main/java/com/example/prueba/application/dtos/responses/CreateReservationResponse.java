@@ -6,11 +6,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
-import java.util.UUID;
 
 @Getter @Setter
 public class CreateReservationResponse {
-    private UUID id;
+    private String id;
     private String departureDate;
     private String returnDate;
     private String departureTime;

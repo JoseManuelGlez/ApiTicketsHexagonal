@@ -3,20 +3,19 @@ package com.example.prueba.domain.ports.out;
 import com.example.prueba.domain.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.UUID;
 
 @Repository
-public interface IUserRepository extends JpaRepository<User, Long> {
-    User findIdById(UUID userId);
+public interface IUserRepository extends JpaRepository<User, String> {
+    User findIdById(String userId);
 
     User findUserByEmailAndPassword(String email, String password);
 
-    @Query("SELECT u FROM User u WHERE u IN :users")
-    List<User> findUsersByUserList(@Param("users") List<User> users);
+    @Query("SELECT u.id FROM User u WHERE u.email = ?1")
+    String findIdByEmail(String email);
 
-    User findIdByEmail(String email);
+    List<User> findByEmailIn(List<String> emails);
+
 }

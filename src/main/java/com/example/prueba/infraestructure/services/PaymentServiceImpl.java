@@ -74,21 +74,24 @@ public class PaymentServiceImpl implements IPaymentService {
         redirectUrls.setReturnUrl(successUrl);
         payment.setRedirectUrls(redirectUrls);
 
-        User user = userService.findIdByEmail(request.getEmail());
+        String user = userService.findIdByEmail(request.getEmail());
         DestinationReport destinationReport = destinationReportService.findDestinationReportByUserId(user);
-        CheckInCode checkInCode = checkInService.create("NO_ASSIST");
+        CheckInCode checkInCode = checkInService.create("NOT_ASSIST");
 
-        sendPaymentConfirmationEmail(payment, request.getEmail(), user, destinationReport, checkInCode);
+        try {
+            sendPaymentConfirmationEmail(payment, request.getEmail(), user, destinationReport, checkInCode);
+        }catch (Error e){
 
+        }
         return payment.create(apiContext);
     }
 
-    private void sendPaymentConfirmationEmail(Payment payment, String userEmail, User user, DestinationReport destinationReport, CheckInCode checkInCode) {
+    private void sendPaymentConfirmationEmail(Payment payment, String userEmail, String user, DestinationReport destinationReport, CheckInCode checkInCode) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom(fromEmail);
         message.setTo(userEmail);
-        message.setSubject("Confirmación de pago");
-        message.setText("Se ha realizado un pago por el monto de " + payment.getTransactions().get(0).getAmount().getTotal() + " " + payment.getTransactions().get(0).getAmount().getCurrency() + "Usuario: " + user + " " + "Destino: " + destinationReport + " " + "Codigo: " + checkInCode.getCode());
+        message.setSubject("Confirmacion de pago");
+        message.setText("Se ha realizado un pago por el monto de " + payment.getTransactions().get(0).getAmount().getTotal() + " " + payment.getTransactions().get(0).getAmount().getCurrency() + "Usuario: " + user + " " + "Matricula: "+ destinationReport.getPlat() +" " + "Codigo: " + checkInCode.getCode());
 
         javaMailSender.send(message);
     }

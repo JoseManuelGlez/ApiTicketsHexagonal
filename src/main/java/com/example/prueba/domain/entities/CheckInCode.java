@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
-
 @Entity
 @Table(name = "check_in")
 @Getter
@@ -14,9 +12,9 @@ import java.util.UUID;
 public class CheckInCode {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private String id;
 
-    private String code = String.valueOf(id);
+    private String code;
 
     @Enumerated(EnumType.STRING)
     private CheckInStatus status;

@@ -19,6 +19,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ReservationServiceImpl implements IReservationService {
@@ -58,7 +59,11 @@ public class ReservationServiceImpl implements IReservationService {
         reservation.setLuggageType(request.getLuggageType());
 
         Destination destination = destinationService.findDestinationByDestination(request.getDestination());
-        List<User> users = userService.findUsers(request.getUsers());
+        List<String> emails = request.getUsers().stream()
+                .map(User::getEmail)
+                .collect(Collectors.toList());
+
+        List<User> users = userService.findUsersByEmails(emails);
         Vehicle vehicle = vehicleService.findPlatByPlat(request.getPlat());
         reservation.setDestination(destination);
         reservation.setUsers(users);
@@ -80,17 +85,9 @@ public class ReservationServiceImpl implements IReservationService {
         response.setTotal(reservation.getTotal());
         response.setLuggageType(reservation.getLuggageType());
 
-        response.setDestination(from(reservation.getDestination()));
         response.setUsers(reservation.getUsers());
         response.setPlat(from(reservation.getVehicle()));
-
-        return response;
-    }
-
-    private DestinationResponse from(Destination destination){
-        DestinationResponse response = new DestinationResponse();
-
-        response.setDestination(destination.getDestination());
+        response.setDestination(from(reservation.getDestination()));
 
         return response;
     }
@@ -99,6 +96,14 @@ public class ReservationServiceImpl implements IReservationService {
         PlatVehicleResponse response = new PlatVehicleResponse();
 
         response.setPlat(vehicle.getPlat());
+
+        return response;
+    }
+
+    private DestinationResponse from(Destination destination){
+        DestinationResponse response = new DestinationResponse();
+
+        response.setDestination(destination.getCity());
 
         return response;
     }

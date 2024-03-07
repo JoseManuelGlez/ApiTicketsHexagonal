@@ -4,15 +4,13 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.UUID;
-
 @Entity
 @Table(name = "vehicles")
 @Getter @Setter
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private String id;
 
     private int capacity;
     private String plat;
@@ -26,6 +24,6 @@ public class Vehicle {
     private DestinationReport destinationReport;
 
     @ManyToOne
-    @JoinColumn(name = "destination", referencedColumnName = "destination")
+    @JoinColumn(name = "city", referencedColumnName = "city")
     private Destination destination;
 }
